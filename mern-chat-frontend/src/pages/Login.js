@@ -10,9 +10,10 @@ function Login() {
   <Container>
     <Row>
       <Col md={5} className="login_bg"></Col>
-      <Col md={7} className="d-flex   algn-iems-center justify-content-center flex-direction-column" >
+      <Col md={7} className="d-flex align-items-center justify-content-center flex-direction-column" >
 
     <Form style={{width:'80%',maxWidth:500}}>
+    
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />

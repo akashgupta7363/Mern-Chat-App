@@ -1,0 +1,31 @@
+.signup_bg{
+   background-image: url(https://images.pexels.com/photos/1719233/pexels-photo-1719233.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+
+   height : 92vh;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   overflow-x: hidden;
+}
+.signup_profile_pic_container{
+   width: 100px;
+   height: 100px;
+   margin:0 auto;
+   position: relative;
+}
+.signup_profile_pic{
+   width: 100px;
+   height: 100px;
+   object-fit: cover;
+   border: 2px solid gray;
+   border-radius: 50%;
+}
+.add-picture-icon{
+   position: absolute ;
+   right: 10px;
+   bottom :0;
+   color: green;
+   background-color: white;
+   cursor: pointer;
+   z-index: 99;
+}
