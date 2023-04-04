@@ -1,4 +1,4 @@
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import './App.css';
 import Navigation from './components/Navigation';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
@@ -11,7 +11,7 @@ import Chat from './pages/Chat';
 function App() {
   return<>
   <BrowserRouter>
-  <Navigation>
+  <Navigation/>
     <Routes>
       <Route path="/login"  element ={<Login/>} />
       <Route path="/signup"  element ={<Signup/>} />
@@ -20,7 +20,7 @@ function App() {
     </Routes>
 
   
-  </Navigation>
+ 
   </BrowserRouter>
   </>
 }
