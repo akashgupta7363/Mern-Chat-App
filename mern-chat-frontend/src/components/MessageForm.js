@@ -1,12 +1,13 @@
 import React from 'react'
 import { Button, Form, FormControl,Row,Col } from 'react-bootstrap'
+import './MessageForm.css';
 
 function MessageForm() {
 function handleSubmit(e){
 e.preventDefault();
 }
 
-  return <div className='message-outputs'>
+  return <><div className='message-outputs'></div>
    <Form onSubmit={handleSubmit}>
       <Row>
          <Col md={10}>
@@ -23,7 +24,7 @@ e.preventDefault();
 
    </Form>
 
-   </div>
+   </>
 }
 
 export default MessageForm
