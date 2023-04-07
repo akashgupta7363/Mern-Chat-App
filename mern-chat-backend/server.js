@@ -1,5 +1,6 @@
 const express=require('express');
 const app=express();
+require('./connection')
 
 
 const rooms=['general','crypto','tech','finance'];
