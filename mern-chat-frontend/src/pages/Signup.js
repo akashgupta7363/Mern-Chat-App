@@ -66,7 +66,7 @@ function picsrc(){
       <Form style={{width:'80%',maxWidth:500}} onSubmit={handleSignup}>
         <h1 className='text-center'>Create your account</h1>
         <div className='signup_profile_pic_container'>
-          <img className="signup_profile_pic"   src={picsrc()}></img>
+          <img className="signup_profile_pic"   src={picsrc()}alt='no upload'></img>
            <label className='img-upload' htmlFor='image-upload'>
             <i className="fas fa-plus-circle add-picture-icon"></i>
            </label>
