@@ -3,17 +3,27 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Col,Row, Container } from 'react-bootstrap'
 import './Login.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLoginUserMutation} from "../services/appApi"
 
 function Login() {
   const [email,setEmail]= useState('');
   const [password,setPassword]= useState('');
-  // const [loginUser, {isLoading, error}]=useLoginUserMutation;
+  const [loginUser, {isLoading, error}]=useLoginUserMutation();
+  const navigate=useNavigate();
 
 
   function handlelogin(e){
     e.preventDefault();
+    //login logic
+    loginUser({email,password}).then(({data})=>{
+      if(data){
+        //scket works
+
+        navigate('/chat');
+  
+      }
+    }).catch(error=>console.log(error));
      
     }
 

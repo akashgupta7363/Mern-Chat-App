@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Col,Row, Container } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 import "./Signup.css";
 import bot from "../assets/bot.jpg" 
 
 import {useSignupUserMutation} from "../services/appApi"
+
 
 
 
@@ -15,6 +16,7 @@ function Signup() {
   const [name,setName]= useState('');
   const [password,setPassword]= useState('');
   const [signupUser, isLoading, error]= useSignupUserMutation();
+  const navigate=useNavigate();
 
 
   const [image,setImage]= useState('null');
@@ -64,6 +66,9 @@ function picsrc(){
     signupUser({name,email,password,picture:url}).then(({data})=>{
       if(data)
       console.log(data);
+      navigate('/chat');
+
+
     })
   
   }
