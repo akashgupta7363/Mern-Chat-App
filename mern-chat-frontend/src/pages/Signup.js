@@ -6,11 +6,16 @@ import { Link } from 'react-router-dom';
 import "./Signup.css";
 import bot from "../assets/bot.jpg" 
 
+import {useSignupUserMutation} from "../services/appApi"
+
+
 
 function Signup() {
   const [email,setEmail]= useState('');
   const [name,setName]= useState('');
   const [password,setPassword]= useState('');
+  const [signupUser, isLoading, error]= useSignupUserMutation();
+
 
   const [image,setImage]= useState('null');
   const [uploadingImg,setUploadingImg]= useState('false');
@@ -52,9 +57,14 @@ function picsrc(){
    }
    async function handleSignup(e){
     e.preventDefault();
-    if(!image) return alert("Please upload the image")
+    if(!image) return alert("Please upload the image");
     const url =await uploadImage(image);
     console.log(url);
+
+    signupUser({name,email,password,picture:url}).then(({data})=>{
+      if(data)
+      console.log(data);
+    })
   
   }
 
